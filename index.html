@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gianni Santucci - Senior Full-Stack Developer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            950: '#1e0b36',
+                            900: '#2c1250',
+                            800: '#3b1a6c',
+                            600: '#6b21a8',
+                            500: '#8b5cf6',
+                            400: '#a78bfa',
+                        },
+                        accent: {
+                            400: '#2dd4bf', // Turquesa / Esmeralda vibrante
+                            500: '#14b8a6',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & Lucide Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 transition-colors duration-300">
+
+    <!-- HEADER & NAVEGACIÓN -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo de Marca -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div>
+                    <span class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-accent-400 bg-clip-text text-transparent">Santucci</span>
+                </div>
+            </a>
+
+            <!-- Navegación Escritorio -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#sobre-mi" class="hover:text-accent-400 transition-colors">Sobre mí</a>
+                <a href="#servicios" class="hover:text-accent-400 transition-colors">Servicios</a>
+                <a href="#habilidades" class="hover:text-accent-400 transition-colors">Habilidades</a>
+                <a href="#experiencia" class="hover:text-accent-400 transition-colors">Experiencia</a>
+                <a href="#educacion" class="hover:text-accent-400 transition-colors">Educación</a>
+                <a href="#proyectos" class="hover:text-accent-400 transition-colors">Proyectos</a>
+                <a href="#testimonios" class="hover:text-accent-400 transition-colors">Testimonios</a>
+            </nav>
+
+            <!-- Controles Derecha -->
+            <div class="flex items-center gap-4">
+                <!-- Toggle Tema -->
+                <button id="theme-toggle" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-accent-400 hover:border-accent-400/50 transition-all" aria-label="Cambiar Tema">
+                    <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                    <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+                </button>
+
+                <!-- CTA -->
+                <a href="#contacto" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-accent-400 text-white font-semibold text-sm shadow-lg shadow-brand-600/25 transition-all transform hover:-translate-y-0.5">
+                    <span>Trabajemos Juntos</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+
+                <!-- Botón Menú Móvil -->
+                <button id="menu-btn" class="lg:hidden p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil desplegable -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#sobre-mi" class="block py-2 text-slate-300 hover:text-accent-400 font-medium">Sobre mí</a>
+            <a href="#servicios" class="block py-2 text-slate-300 hover:text-accent-400 font-medium">Servicios</a>
+            <a href="#habilidades" class="block py-2 text-slate-300 hover:text-accent-400 font-medium">Habilidades</a>
+            <a href="#experiencia" class="block py-2 text-slate-300 hover:text-accent-400 font-medium">Experiencia</a>
+            <a href="#educacion" class="block py-2 text-slate-300 hover:text-accent-400 font-medium">Educación</a>
+            <a href="#proyectos" class="block py-2 text-slate-300 hover:text-accent-400 font-medium">Proyectos</a>
+            <a href="#testimonios" class="block py-2 text-slate-300 hover:text-accent-400 font-medium">Testimonios</a>
+            <a href="#contacto" class="block text-center w-full py-3 mt-2 rounded-xl bg-brand-600 text-white font-semibold">Trabajemos Juntos</a>
+        </div>
+    </header>
+
+    <!-- SECCIÓN HERO -->
+    <section id="sobre-mi" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden bg-gradient-to-b from-brand-950/40 via-slate-950 to-slate-950">
+        <!-- Resplandor de fondo -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-600/15 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Columna Izquierda: Información Principal (Pasa abajo en mobile con order-2, y vuelve a la normalidad en lg) -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left order-2 lg:order-none">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-accent-400 text-xs font-semibold shadow-inner">
+                        <span class="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
+                        Disponible para Freelance y Proyectos Corporativos
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Hola, soy <span class="bg-gradient-to-r from-brand-400 via-white to-accent-400 bg-clip-text text-transparent">Gianni Santucci</span>
+                    </h1>
+
+                    <p class="text-xl sm:text-2xl font-semibold text-accent-400">
+                        Desarrollador de Software | Senior Full-Stack & Backend
+                    </p>
+
+                    <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Más de 15 años de experiencia diseñando y construyendo aplicaciones web de alto rendimiento, arquitecturas de backend robustas, APIs escalables y sistemas a medida para clientes de diferentes partes del mundo.
+                    </p>
+
+                    <!-- Datos rápidos de contacto -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2 text-sm text-slate-300">
+                        <a href="tel:+584129905244" class="flex items-center gap-2 bg-slate-900/80 border border-slate-800 px-3.5 py-2 rounded-xl hover:border-accent-400 transition-colors">
+                            <i data-lucide="phone" class="w-4 h-4 text-accent-400"></i>
+                            <span>(+58) 412 990 52 44</span>
+                        </a>
+                        <a href="mailto:gianni.d.santucc@gmail.com" class="flex items-center gap-2 bg-slate-900/80 border border-slate-800 px-3.5 py-2 rounded-xl hover:border-accent-400 transition-colors">
+                            <i data-lucide="mail" class="w-4 h-4 text-accent-400"></i>
+                            <span>gianni.d.santucc@gmail.com</span>
+                        </a>
+                        <div class="flex items-center gap-3 bg-slate-900/80 border border-slate-800 px-3.5 py-2 rounded-xl">
+                            <i data-lucide="at-sign" class="w-4 h-4 text-accent-400"></i>
+                            <span>@_santu87 / santu1987</span>
+                        </div>
+                    </div>
+
+                    <!-- Botones de Acción -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#contacto" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-600 to-accent-500 hover:from-brand-500 hover:to-accent-400 text-white font-bold text-center shadow-lg shadow-brand-600/30 transition-all transform hover:-translate-y-0.5">
+                            Contratar o Cotizar Proyecto
+                        </a>
+                        <a href="#proyectos" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-200 font-bold text-center transition-all">
+                            Ver Portafolio
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Imagen Circular con Brillo Sutil (Pasa arriba en mobile con order-1) -->
+                <div class="lg:col-span-5 flex justify-center order-1 lg:order-none">
+                    <div class="relative">
+                        <!-- Anillo de brillo decorativo -->
+                        <div class="absolute -inset-4 rounded-full bg-gradient-to-tr from-brand-600 via-accent-400 to-brand-500 opacity-50 blur-xl animate-pulse"></div>
+                        
+                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full p-2 bg-gradient-to-b from-brand-500 to-slate-900 shadow-2xl">
+                            <img src="assets/img/personas/avatar_cv.png" alt="Gianni Santucci - Senior Developer" class="w-full h-full object-cover rounded-full shadow-lg">
+                        </div>
+
+                        <!-- Badge flotante experiencia -->
+                        <div class="absolute bottom-4 right-4 bg-slate-900/90 backdrop-blur-md border border-slate-800 px-4 py-3 rounded-2xl shadow-xl flex items-center gap-3">
+                            <div class="p-2.5 rounded-xl bg-brand-600/20 text-accent-400">
+                                <i data-lucide="award" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">Experiencia</p>
+                                <p class="text-sm font-bold text-white">+15 Años en Tech</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DESCRIPCIÓN DE SERVICIOS -->
+    <section id="servicios" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-accent-400 text-sm font-bold tracking-wider uppercase">Lo que ofrezco</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Soluciones Tecnológicas de Alto Rendimiento</h2>
+                <p class="text-slate-400 mt-4">Impulso tu negocio al siguiente nivel con arquitectura de software moderna, automatización inteligente y desarrollos a la medida que maximizan tu ROI.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1: Desarrollo con IA -->
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-accent-400/50 transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-600/20 text-accent-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="sparkles" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Desarrollo & Soluciones con IA</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Potencia tus aplicaciones integrando inteligencia artificial de última generación. Uso de entornos avanzados como <strong class="text-slate-200">Open Code</strong>, <strong class="text-slate-200">Antigravity</strong> y modelos de lenguaje de alto rendimiento como <strong class="text-slate-200">Gemini, DeepSeek y ZLM</strong> para crear experiencias inteligentes y automatizadas.
+                    </p>
+                </div>
+
+                <!-- Service 2: Automatizaciones -->
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-accent-400/50 transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-600/20 text-accent-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="cpu" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Automatización de Procesos</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Elimina tareas repetitivas y optimiza los flujos de trabajo de tu empresa mediante la creación de flujos automatizados robustos utilizando <strong class="text-slate-200">n8n</strong>, conectando tus plataformas y sistemas para operar en piloto automático.
+                    </p>
+                </div>
+
+                <!-- Service 3: Backend & APIs Avanzadas -->
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-accent-400/50 transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-600/20 text-accent-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="server" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Backend & APIs Avanzadas</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Desarrollo backend a prueba de fallos en PHP (<strong class="text-slate-200">Laravel, Filament V3, CodeIgniter</strong>) y Python (<strong class="text-slate-200">Django</strong>), construyendo arquitecturas seguras, escalables y APIs REST de alto rendimiento.
+                    </p>
+                </div>
+
+                <!-- Service 4: Soluciones Web a Medida -->
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-accent-400/50 transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-600/20 text-accent-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="layout" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Soluciones Web a Medida</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Desarrollo Full-Stack integral con interfaces de usuario ultra-responsivas, dinámicas y modernas impulsadas por <strong class="text-slate-200">Vue.js 3, Angular y TypeScript</strong> bajo rigurosos estándares corporativos.
+                    </p>
+                </div>
+
+                <!-- Service 5: Integraciones Webhook y Pasarelas -->
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-accent-400/50 transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-600/20 text-accent-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="network" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Integraciones Webhook & Pasarelas</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Sincronización en tiempo real de tus ecosistemas digitales. Especialista en pasarelas de pago (<strong class="text-slate-200">Stripe, PayPal</strong>) y en la interoperabilidad avanzada de aplicaciones web con <strong class="text-slate-200">WordPress mediante webhooks</strong>.
+                    </p>
+                </div>
+
+                <!-- Service 6: Bases de Datos y Migración Legacy -->
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-accent-400/50 transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-600/20 text-accent-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="database" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Bases de Datos & Migración Legacy</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Diseño y optimización de bases de datos (<strong class="text-slate-200">PostgreSQL, MySQL, MongoDB</strong>) de alto tráfico, junto con la refactorización y migración segura de sistemas monolíticos antiguos hacia tecnologías modernas.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HABILIDADES Y TECNOLOGÍAS (SKILLS) -->
+    <section id="habilidades" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-accent-400 text-sm font-bold tracking-wider uppercase">Stack Tecnológico</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Habilidades y Competencias Técnicas</h2>
+                <p class="text-slate-400 mt-4">Dominio consolidado en desarrollo backend, interfaces modernas, herramientas de IA, automatización y arquitecturas conectadas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- 1. Inteligencia Artificial -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2.5 rounded-xl bg-brand-600/20 text-accent-400">
+                            <i data-lucide="sparkles" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Inteligencia Artificial</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Open Code</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Antigravity</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Gemini</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">DeepSeek</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">ZLM</span>
+                    </div>
+                </div>
+
+                <!-- 2. Automatizaciones y Pasarelas -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2.5 rounded-xl bg-brand-600/20 text-accent-400">
+                            <i data-lucide="cpu" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Automatización & Pasarelas</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">n8n</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Webhooks</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Stripe</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">PayPal</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">APIs REST</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Postman</span>
+                    </div>
+                </div>
+
+                <!-- 3. Backend -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2.5 rounded-xl bg-brand-600/20 text-accent-400">
+                            <i data-lucide="server" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Backend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">PHP</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Laravel</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Filament V3</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">CodeIgniter</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Python / Django</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Firebase</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Postman</span>
+                    </div>
+                </div>
+
+                <!-- 4. Frontend -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2.5 rounded-xl bg-brand-600/20 text-accent-400">
+                            <i data-lucide="code" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Frontend & UI</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">JavaScript</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">TypeScript</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Vue.js 3</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Angular</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">AngularJS 1.x</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Tailwind CSS</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Bootstrap</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Jquery</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">WordPress Apps</span>
+                    </div>
+                </div>
+
+                <!-- 5. Bases de Datos -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2.5 rounded-xl bg-brand-600/20 text-accent-400">
+                            <i data-lucide="database" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Bases de Datos</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">PostgreSQL</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">MySQL</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">MongoDB</span>
+                    </div>
+                </div>
+
+                <!-- 6. Herramientas y Gestión -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2.5 rounded-xl bg-brand-600/20 text-accent-400">
+                            <i data-lucide="git-branch" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Tools & Management</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">SCRUM</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Jira / Trello</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Asana</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Docker</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Linux</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium">Git</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCIA PROFESIONAL -->
+    <section id="experiencia" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-accent-400 text-sm font-bold tracking-wider uppercase">Trayectoria</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Experiencia Profesional Real</h2>
+                <p class="text-slate-400 mt-4">Historial comprobado trabajando para software factories, agencias y clientes internacionales de México, Colombia, USA, España y Ecuador.</p>
+            </div>
+
+            <!-- Contenedor de las tarjetas con ID para controlarlas desde JS -->
+            <div id="experiencia-container" class="space-y-6 max-w-4xl mx-auto">
+                
+                <!-- Item 1: Freelance -->
+                <div class="experiencia-item p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 relative hidden" data-index="0">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <div class="flex items-center gap-2.5">
+                                <h3 class="text-xl font-bold text-white">Freelance Software Engineer</h3>
+                                <span class="text-lg" title="Remoto / Global">🌍</span>
+                            </div>
+                            <p class="text-accent-400 font-medium">Freelance • Remoto</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-brand-600/20 text-accent-400 text-xs font-bold w-fit">2016 - Actualidad</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Desarrollo integral de sistemas web Frontend, Backend y Bases de Datos. Experiencia trabajando de manera remota desde 2018 colaborando con modelos de negocios basados en software factories, agencias digitales y startups.
+                    </p>
+                </div>
+
+                <!-- Item 2: Hispanos Soluciones -->
+                <div class="experiencia-item p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 relative hidden" data-index="1">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <div class="flex items-center gap-2.5">
+                                <h3 class="text-xl font-bold text-white">Desarrollador Fullstack</h3>
+                                <div class="flex items-center gap-1.5" title="México, Colombia, USA, España, Ecuador">
+                                    <img src="https://flagcdn.com/w40/mx.png" srcset="https://flagcdn.com/w80/mx.png 2x" width="20" alt="México" class="rounded-[3px] shadow-sm">
+                                    <img src="https://flagcdn.com/w40/co.png" srcset="https://flagcdn.com/w80/co.png 2x" width="20" alt="Colombia" class="rounded-[3px] shadow-sm">
+                                    <img src="https://flagcdn.com/w40/us.png" srcset="https://flagcdn.com/w80/us.png 2x" width="20" alt="USA" class="rounded-[3px] shadow-sm">
+                                    <img src="https://flagcdn.com/w40/es.png" srcset="https://flagcdn.com/w80/es.png 2x" width="20" alt="España" class="rounded-[3px] shadow-sm">
+                                    <img src="https://flagcdn.com/w40/ec.png" srcset="https://flagcdn.com/w80/ec.png 2x" width="20" alt="Ecuador" class="rounded-[3px] shadow-sm">
+                                </div>
+                            </div>
+                            <p class="text-accent-400 font-medium">Hispanos Soluciones</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-brand-600/20 text-accent-400 text-xs font-bold w-fit">Jul 2020 - Actualidad</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-3">
+                        Desarrollo de aplicaciones web para clientes internacionales en México, Colombia, USA, España y Ecuador.
+                    </p>
+                    <ul class="list-disc list-inside text-slate-400 text-xs space-y-1">
+                        <li><strong>Backend:</strong> PHP (Laravel, Filament, CodeIgniter), Python Django, creación de API REST y Postman.</li>
+                        <li><strong>Frontend:</strong> Vue.js 3, Angular, TypeScript, JS Vainilla, CSS, Bootstrap.</li>
+                    </ul>
+                </div>
+
+                <!-- Item 3: ReÁnima (España) -->
+                <div class="experiencia-item p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 relative hidden" data-index="2">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <div class="flex items-center gap-2.5">
+                                <h3 class="text-xl font-bold text-white">BackEnd Developer <span class="text-xs font-normal text-slate-400">(Recurso Hispanos Soluciones)</span></h3>
+                                <img src="https://flagcdn.com/w40/es.png" srcset="https://flagcdn.com/w80/es.png 2x" width="20" alt="España" class="rounded-[3px] shadow-sm">
+                            </div>
+                            <p class="text-accent-400 font-medium">ReÁnima Soluciones Digitales (España)</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-brand-600/20 text-accent-400 text-xs font-bold w-fit">Nov 2025 - Jul 2026</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Desarrollo del backend de la app CIMA para mujeres cineastas. Laravel 12 (PHP 8.2), MySQL, APIs REST gestionadas en Postman, panel administrativo en Filament V3, integración app-web WordPress vía REST API/Webhooks y notificaciones con Firebase.
+                    </p>
+                </div>
+
+                <!-- Item 4: Experteam / DHL (Ecuador) -->
+                <div class="experiencia-item p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 relative hidden" data-index="3">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <div class="flex items-center gap-2.5">
+                                <h3 class="text-xl font-bold text-white">FrontEnd Angular Developer <span class="text-xs font-normal text-slate-400">(Recurso Hispanos Soluciones)</span></h3>
+                                <img src="https://flagcdn.com/w40/ec.png" srcset="https://flagcdn.com/w80/ec.png 2x" width="20" alt="Ecuador" class="rounded-[3px] shadow-sm">
+                            </div>
+                            <p class="text-accent-400 font-medium">Experteam Cia. Ltda (Ecuador)</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-brand-600/20 text-accent-400 text-xs font-bold w-fit">Dic 2021 - Mar 2025</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Desarrollo del sistema de control de paquetes CRA-10 para DHL bajo Angular (Commercial Invoice, Billings/Shipments, DropOff, DropOff Small Device, External Billings, BackOffice admin utilities y gestión en Jira).
+                    </p>
+                </div>
+
+                <!-- Item 5: Estratégica (México) -->
+                <div class="experiencia-item p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 relative hidden" data-index="4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <div class="flex items-center gap-2.5">
+                                <h3 class="text-xl font-bold text-white">Senior Full Stack Developer <span class="text-xs font-normal text-slate-400">(Recurso Hispanos Soluciones)</span></h3>
+                                <img src="https://flagcdn.com/w40/mx.png" srcset="https://flagcdn.com/w80/mx.png 2x" width="20" alt="México" class="rounded-[3px] shadow-sm">
+                            </div>
+                            <p class="text-accent-400 font-medium">Estratégica Smarter Marketing (México)</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-brand-600/20 text-accent-400 text-xs font-bold w-fit">Ene 2021 - Nov 2021</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Desarrollo del sistema ESR (registro de empresas socialmente responsables) para la organización CEMEFI bajo tecnologías Laravel, Vue.js 3 y MySQL, gestionado con Jira y Trello.
+                    </p>
+                </div>
+
+                <!-- Item 6: Ag2 IT Consulting (México) -->
+                <div class="experiencia-item p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 relative hidden" data-index="5">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <div class="flex items-center gap-2.5">
+                                <h3 class="text-xl font-bold text-white">Senior Full Stack Developer</h3>
+                                <img src="https://flagcdn.com/w40/mx.png" srcset="https://flagcdn.com/w80/mx.png 2x" width="20" alt="México" class="rounded-[3px] shadow-sm">
+                            </div>
+                            <p class="text-accent-400 font-medium">Ag2 IT Consulting (México)</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-brand-600/20 text-accent-400 text-xs font-bold w-fit">Jul 2018 - Oct 2019</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Desarrollo del CRM UrbanHub para alquiler de espacios de coworking utilizando CodeIgniter, JS Nativo, PostgreSQL y MongoDB, coordinado mediante Asana.
+                    </p>
+                </div>
+
+                <!-- Item 7: Fundación Ávila TV (Venezuela) -->
+                <div class="experiencia-item p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 relative hidden" data-index="6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <div class="flex items-center gap-2.5">
+                                <h3 class="text-xl font-bold text-white">Senior Full Stack Developer</h3>
+                                <img src="https://flagcdn.com/w40/ve.png" srcset="https://flagcdn.com/w80/ve.png 2x" width="20" alt="Venezuela" class="rounded-[3px] shadow-sm">
+                            </div>
+                            <p class="text-accent-400 font-medium">Fundación Ávila TV (Venezuela)</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-brand-600/20 text-accent-400 text-xs font-bold w-fit">Feb 2015 - May 2018</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Desarrollo de sistema Help Desk para soporte técnico bajo PHP (MVC), JS Nativo y PostgreSQL. Participación en el sistema SIGOT para control de equipos de televisión bajo Django, JS Nativo y PostgreSQL. Creación de la nueva versión de la página web, registro de equipos informáticos y bienes nacionales bajo Django, JS Nativo, AngularJS y PostgreSQL. Participación en migración de apps web institucionales de PHP a Python (Django 1.x) y Laravel 5.x.
+                    </p>
+                </div>
+
+                <!-- Item 8: MinJuventud (Venezuela) -->
+                <div class="experiencia-item p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 relative hidden" data-index="7">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <div class="flex items-center gap-2.5">
+                                <h3 class="text-xl font-bold text-white">Coordinador de Desarrollo Web</h3>
+                                <img src="https://flagcdn.com/w40/ve.png" srcset="https://flagcdn.com/w80/ve.png 2x" width="20" alt="Venezuela" class="rounded-[3px] shadow-sm">
+                            </div>
+                            <p class="text-accent-400 font-medium">MinJuventud (Venezuela)</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-brand-600/20 text-accent-400 text-xs font-bold w-fit">Mar 2013 - Ene 2015</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Coordinación técnica de equipo de trabajo para el desarrollo de aplicativos propios de la organización. Desarrollo del Sistema de Registro Nacional para la Juventud (SRJ) con integración de TXT bancarios, sistema de mensajería SMS (PHP, JS, PostgreSQL, GNU/Linux), sistema de acreditación SDEA para congresos, y sistema de gestión de operaciones de TV para el canal ZumTV (SIS_ZUM).
+                    </p>
+                </div>
+
+                <!-- Item 9: Grupo SMS (Venezuela) -->
+                <div class="experiencia-item p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 relative hidden" data-index="8">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <div class="flex items-center gap-2.5">
+                                <h3 class="text-xl font-bold text-white">Desarrollador PHP</h3>
+                                <img src="https://flagcdn.com/w40/ve.png" srcset="https://flagcdn.com/w80/ve.png 2x" width="20" alt="Venezuela" class="rounded-[3px] shadow-sm">
+                            </div>
+                            <p class="text-accent-400 font-medium">Grupo SMS (Venezuela)</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-brand-600/20 text-accent-400 text-xs font-bold w-fit">Ene 2013 - Mar 2013</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Participación clave en el desarrollo de interfaces web de alta interoperabilidad para el proyecto Grupo Pronto-MPPE (Ministerio del Poder Popular para la Educación). Optimización de procesos críticos mediante el desarrollo de rutinas y mejoras continuas para el sistema web institucional SISEG (Seguros).
+                    </p>
+                </div>
+
+                <!-- Item 10: OCHINA (Venezuela) -->
+                <div class="experiencia-item p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 relative hidden" data-index="9">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <div class="flex items-center gap-2.5">
+                                <h3 class="text-xl font-bold text-white">Analista Programador III</h3>
+                                <img src="https://flagcdn.com/w40/ve.png" srcset="https://flagcdn.com/w80/ve.png 2x" width="20" alt="Venezuela" class="rounded-[3px] shadow-sm">
+                            </div>
+                            <p class="text-accent-400 font-medium">Oficina Coordinadora de Hidrografía y Navegación (OCHINA)</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-brand-600/20 text-accent-400 text-xs font-bold w-fit">Ene 2009 - Dic 2012</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Liderazgo en el análisis, desarrollo y programación de módulos financieros clave (Tesorería, Cuentas por Pagar y Contabilidad) para el Sistema Web Administrativo (SAI-OCHINA). Gestión de soporte técnico especializado (Help Desk) para garantizar la continuidad operativa de los usuarios del sistema.
+                    </p>
+                </div>
+
+                <!-- Item 11: Superatec (Venezuela) -->
+                <div class="experiencia-item p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 relative hidden" data-index="10">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <div class="flex items-center gap-2.5">
+                                <h3 class="text-xl font-bold text-white">Facilitador de Formación Tecnológica</h3>
+                                <img src="https://flagcdn.com/w40/ve.png" srcset="https://flagcdn.com/w80/ve.png 2x" width="20" alt="Venezuela" class="rounded-[3px] shadow-sm">
+                            </div>
+                            <p class="text-accent-400 font-medium">Superatec Venezuela</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-brand-600/20 text-accent-400 text-xs font-bold w-fit">Jun 2008 - May 2009</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Instructor especializado en capacitación tecnológica. Enseñanza y dominio de sistemas operativos GNU/Linux y Windows, suites ofimáticas (Microsoft Office, OpenOffice) y formación técnica integral en mantenimiento, ensamblaje y soporte de equipos de computación.
+                    </p>
+                </div>
+
+                <!-- Item 12: Disk Soportes (Venezuela) -->
+                <div class="experiencia-item p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 relative hidden" data-index="11">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <div class="flex items-center gap-2.5">
+                                <h3 class="text-xl font-bold text-white">Analista Programador</h3>
+                                <img src="https://flagcdn.com/w40/ve.png" srcset="https://flagcdn.com/w80/ve.png 2x" width="20" alt="Venezuela" class="rounded-[3px] shadow-sm">
+                            </div>
+                            <p class="text-accent-400 font-medium">Disk Soportes SRL</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-brand-600/20 text-accent-400 text-xs font-bold w-fit">Jul 2007 - Jun 2008</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Desarrollo de aplicaciones de escritorio y sistemas web orientados al sector asegurador y reasegurador bajo lenguajes Visual Basic (6.0 y .NET) y bases de datos MS Access. Participación clave en el desarrollo del módulo de facturación del sistema Corredor 2000, mantenimiento de rutinas del sistema Finandisk y soporte técnico especializado a usuarios.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Botón Ver Más / Ver Menos -->
+            <div class="text-center mt-10">
+                <button id="load-more-btn" class="px-8 py-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-accent-400 text-accent-400 font-bold text-sm transition-all shadow-lg">
+                    Ver más experiencias (<span id="remaining-count">7</span> más)
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCACIÓN Y CURSOS -->
+    <section id="educacion" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-accent-400 text-sm font-bold tracking-wider uppercase">Formación Académica</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Educación y Certificaciones</h2>
+                <p class="text-slate-400 mt-4">Base universitaria formal y actualización continua en tecnologías de vanguardia.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Educación Formal -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-accent-400 flex items-center gap-2">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i> Académica
+                    </h3>
+                    
+                    <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+                        <span class="text-xs font-bold text-accent-400">2013 - 2015</span>
+                        <h4 class="text-lg font-bold text-white mt-1">Ingeniero en Informática</h4>
+                        <p class="text-slate-400 text-sm">Instituto Universitario Tecnológico del Oeste Mariscal Sucre (IUTOMS)</p>
+                        <span class="inline-block mt-3 px-3 py-1 rounded-md bg-accent-400/10 text-accent-400 text-xs font-semibold">Mención Honorífica Cum Laude</span>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+                        <span class="text-xs font-bold text-accent-400">2005 - 2008</span>
+                        <h4 class="text-lg font-bold text-white mt-1">Técnico Superior en Informática</h4>
+                        <p class="text-slate-400 text-sm">Instituto Universitario Jesús Obrero (IUJO)</p>
+                        <span class="inline-block mt-3 px-3 py-1 rounded-md bg-accent-400/10 text-accent-400 text-xs font-semibold">Mención Honorífica Cum Laude</span>
+                    </div>
+                </div>
+
+                <!-- Cursos y Certificaciones -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-accent-400 flex items-center gap-2">
+                        <i data-lucide="award" class="w-6 h-6"></i> Cursos & Certificados
+                    </h3>
+
+                    <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Platzi & Código Facilito</h4>
+                            <p class="text-slate-400 text-xs mt-1">Curso de PHP con Laravel, JavaScript Básico/Práctico, EcmaScript 6+, Desarrollo Web Profesional y Angular.</p>
+                        </div>
+                        <hr class="border-slate-800">
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Open English</h4>
+                            <p class="text-slate-400 text-xs mt-1">Certificados de Nivel 1, 2 y 3 (Dominio profesional para entornos internacionales).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROYECTOS RECIENTES -->
+    <section id="proyectos" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-accent-400 text-sm font-bold tracking-wider uppercase">Portfolio Work</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Proyectos Recientes Destacados</h2>
+                <p class="text-slate-400 mt-4">Sistemas web y plataformas empresariales desarrolladas bajo rigurosos estándares de calidad.</p>
+                <!-- Nota de Confidencialidad NDA -->
+                <div class="mt-4 p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs flex items-center justify-center gap-2">
+                    <i data-lucide="shield-alert" class="w-4 h-4 shrink-0"></i>
+                    <span>Nota: Varios repositorios de código fuente se encuentran privados debido a políticas de confidencialidad (NDA) de los clientes.</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden group hover:border-accent-400/50 transition-all flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="CIMA App Backend" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-accent-400">ReÁnima Soluciones Digitales (España)</span>
+                            <h3 class="text-xl font-bold text-white mt-1">CIMA App Backend</h3>
+                            <p class="text-slate-400 text-sm mt-2">Backend para API REST y panel administrativo en Filament V3 para aplicación destinada a mujeres cineastas.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-6">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">Laravel 12</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">Filament V3</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden group hover:border-accent-400/50 transition-all flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800" alt="DHL CRA-10" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-accent-400">Experteam / DHL (Ecuador)</span>
+                            <h3 class="text-xl font-bold text-white mt-1">Sistema CRA-10 & Admin Utility</h3>
+                            <p class="text-slate-400 text-sm mt-2">Control avanzado de paquetes, facturación (shipments), DropOff y módulos back-office para operaciones logísticas.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-6">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">Angular</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">TypeScript</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">Jira</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden group hover:border-accent-400/50 transition-all flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="ESR CEMEFI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-accent-400">Estratégica (México)</span>
+                            <h3 class="text-xl font-bold text-white mt-1">ESR CEMEFI</h3>
+                            <p class="text-slate-400 text-sm mt-2">Sistema web integral para la gestión y registro institucional de empresas socialmente responsables.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-6">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">Laravel</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">Vue.js 3</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden group hover:border-accent-400/50 transition-all flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" alt="Urban Hub CRM" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-accent-400">Ag2 IT Consulting (México)</span>
+                            <h3 class="text-xl font-bold text-white mt-1">Urban Hub CRM</h3>
+                            <p class="text-slate-400 text-sm mt-2">CRM especializado para la gestión y alquiler de espacios de coworking y oficinas corporativas.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-6">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">CodeIgniter</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">PostgreSQL</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden group hover:border-accent-400/50 transition-all flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800" alt="EbRecord" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-accent-400">Felamedia</span>
+                            <h3 class="text-xl font-bold text-white mt-1">EbRecord</h3>
+                            <p class="text-slate-400 text-sm mt-2">Sistema integral de gestión de estudiantes y control académico administrativo.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-6">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">PHP</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">JavaScript</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden group hover:border-accent-400/50 transition-all flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800" alt="Bellcommerce" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-accent-400">Ubiquom</span>
+                            <h3 class="text-xl font-bold text-white mt-1">Bellcommerce</h3>
+                            <p class="text-slate-400 text-sm mt-2">Plataforma e-commerce robusta orientada a la comercialización y gestión de inventarios online.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-6">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">PHP</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">MySQL</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REFERENCIAS / TESTIMONIOS -->
+    <section id="testimonios" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-accent-400 text-sm font-bold tracking-wider uppercase">Recomendaciones</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Referencias Profesionales</h2>
+                <p class="text-slate-400 mt-4">Aval de colegas y profesionales que han trabajado directamente conmigo en proyectos de desarrollo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Testimonio 1 -->
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+                    <p class="text-slate-300 italic text-sm leading-relaxed mb-6">
+                        "Gianni es un desarrollador senior excepcional. Su dominio técnico en backend y su capacidad analítica para resolver problemas complejos bajo metodologías ágiles garantizan resultados de máxima calidad."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-brand-600 flex items-center justify-center text-white font-bold text-lg">
+                            JP
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white">José Parisi</h3>
+                            <p class="text-accent-400 text-xs">Senior Full Stack Dev (España)</p>
+                            <p class="text-slate-500 text-xs mt-0.5">Tel: +34 651405480</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+                    <p class="text-slate-300 italic text-sm leading-relaxed mb-6">
+                        "Trabajar con Gianni es sinónimo de orden, profesionalismo y código limpio. Su experiencia con Laravel y arquitecturas de bases de datos destaca notablemente en cada entrega."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-accent-500 flex items-center justify-center text-slate-950 font-bold text-lg">
+                            NM
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white">Nelly Moreno</h3>
+                            <p class="text-accent-400 text-xs">Backend Dev (Venezuela)</p>
+                            <p class="text-slate-500 text-xs mt-0.5">Tel: +58 412 8248865</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO Y LLAMADO A LA ACCIÓN (CTA) -->
+    <section id="contacto" class="py-20 bg-gradient-to-t from-brand-950/60 to-slate-950 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Info de Contacto -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-accent-400 text-sm font-bold tracking-wider uppercase">Trabajemos Juntos</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">¿Tienes un proyecto en mente?</h2>
+                    <p class="text-slate-400 leading-relaxed">
+                        Ya sea que busques un Senior Full-Stack para tu equipo corporativo o necesites desarrollar una solución freelance a medida con <strong>Axioma Development</strong>, estoy listo para ayudarte.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <a href="mailto:gianni.d.santucc@gmail.com" class="flex items-center gap-4 p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-accent-400 transition-colors">
+                            <div class="p-3 rounded-lg bg-brand-600/20 text-accent-400">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">Correo Electrónico</p>
+                                <p class="text-sm font-bold text-white">gianni.d.santucc@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <a href="https://wa.me/584129905244" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-accent-400 transition-colors">
+                            <div class="p-3 rounded-lg bg-brand-600/20 text-accent-400">
+                                <i data-lucide="phone-call" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">WhatsApp / Teléfono Directo</p>
+                                <p class="text-sm font-bold text-white">(+58) 412 990 52 44</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formulario Funcional en JS Nativo -->
+                <div class="lg:col-span-7">
+                    <div class="p-8 sm:p-10 rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl">
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Tu Nombre</label>
+                                    <input type="text" id="name" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-accent-400 transition-colors" placeholder="Ej. Carlos Pérez">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Correo Electrónico</label>
+                                    <input type="email" id="email" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-accent-400 transition-colors" placeholder="carlos@empresa.com">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Asunto / Tipo de Servicio</label>
+                                <input type="text" id="subject" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-accent-400 transition-colors" placeholder="Desarrollo Backend / Proyecto Freelance">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Mensaje</label>
+                                <textarea id="message" rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-accent-400 transition-colors" placeholder="Cuéntame los detalles de tu requerimiento..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 to-accent-500 hover:from-brand-500 hover:to-accent-400 text-white font-bold text-center shadow-lg shadow-brand-600/30 transition-all flex items-center justify-center gap-2">
+                                <span>Enviar Mensaje</span>
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                            </button>
+
+                            <!-- Mensaje de éxito simulado -->
+                            <div id="form-success" class="hidden p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm text-center font-medium">
+                                ¡Mensaje enviado con éxito! Me pondré en contacto contigo a la brevedad.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            <div>
+                <p class="font-extrabold text-white text-lg">Axioma Development</p>
+                <p class="text-slate-500 text-xs mt-1">© 2026 Gianni Santucci. Todos los derechos reservados.</p>
+            </div>
+            <div class="flex items-center gap-4 text-slate-400 text-sm">
+                <a href="mailto:gianni.d.santucc@gmail.com" class="hover:text-accent-400 transition-colors">Email</a>
+                <span>•</span>
+                <a href="https://wa.me/584129905244" target="_blank" class="hover:text-accent-400 transition-colors">WhatsApp</a>
+                <span>•</span>
+                <span class="text-slate-500">@_santu87</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT JAVASCRIPT NATIVO -->
+    <script>
+        // Inicializar iconos Lucide
+        lucide.createIcons();
+
+        // Toggle Menú Móvil
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Ocultar menú móvil al hacer clic en un enlace
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Modo Oscuro / Claro con LocalStorage y persistencia
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        // Comprobar preferencia guardada o del sistema
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            htmlElement.classList.remove('dark');
+        } else {
+            htmlElement.classList.add('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Manejo del Formulario de Contacto en JavaScript nativo
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Simulación de envío exitoso
+            formSuccess.classList.remove('hidden');
+            contactForm.reset();
+
+            setTimeout(() => {
+                formSuccess.classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+</body>
+<script src="assets/js/main.js"></script>
+</html>
