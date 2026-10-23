@@ -614,7 +614,7 @@
     </section>
 
     <!-- EDUCACIÓN Y CURSOS -->
-    <section id="educacion" class="py-20">
+    <section id="educacion" class="py-20 bg-slate-900/30 border-t border-slate-800/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-accent-400 text-sm font-bold tracking-wider uppercase">Formación Académica</span>
@@ -622,46 +622,84 @@
                 <p class="text-slate-400 mt-4">Base universitaria formal y actualización continua en tecnologías de vanguardia.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Educación Formal -->
-                <div class="space-y-6">
-                    <h3 class="text-xl font-bold text-accent-400 flex items-center gap-2">
-                        <i data-lucide="graduation-cap" class="w-6 h-6"></i> Académica
+            <div class="max-w-5xl mx-auto space-y-12">
+                
+                <!-- FILA 1: Educación Académica (2 tarjetas lado a lado) -->
+                <div>
+                    <h3 class="text-xl font-bold text-accent-400 flex items-center gap-2 mb-6">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i> Educación Académica
                     </h3>
-                    
-                    <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-                        <span class="text-xs font-bold text-accent-400">2013 - 2015</span>
-                        <h4 class="text-lg font-bold text-white mt-1">Ingeniero en Informática</h4>
-                        <p class="text-slate-400 text-sm">Instituto Universitario Tecnológico del Oeste Mariscal Sucre (IUTOMS)</p>
-                        <span class="inline-block mt-3 px-3 py-1 rounded-md bg-accent-400/10 text-accent-400 text-xs font-semibold">Mención Honorífica Cum Laude</span>
-                    </div>
 
-                    <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-                        <span class="text-xs font-bold text-accent-400">2005 - 2008</span>
-                        <h4 class="text-lg font-bold text-white mt-1">Técnico Superior en Informática</h4>
-                        <p class="text-slate-400 text-sm">Instituto Universitario Jesús Obrero (IUJO)</p>
-                        <span class="inline-block mt-3 px-3 py-1 rounded-md bg-accent-400/10 text-accent-400 text-xs font-semibold">Mención Honorífica Cum Laude</span>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Card 1: IUTOMS -->
+                        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all">
+                            <div>
+                                <div class="flex items-center justify-between gap-4 mb-4">
+                                    <div class="w-12 h-12 rounded-xl bg-white p-1.5 flex items-center justify-center border border-slate-800 shadow-md shrink-0">
+                                        <img src="assets/img/educacion/logo_iutoms.jpg" alt="IUTOMS" class="w-full h-full object-contain rounded-lg">
+                                    </div>
+                                    <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-600/20 text-accent-400 w-fit">2013 - 2015</span>
+                                </div>
+                                <h4 class="text-lg font-bold text-white mt-1">Ingeniero en Informática</h4>
+                                <p class="text-slate-400 text-sm mt-1">Instituto Universitario Tecnológico del Oeste Mariscal Sucre (IUTOMS)</p>
+                            </div>
+                            <div class="mt-4">
+                                <span class="inline-block px-3 py-1 rounded-md bg-accent-400/10 text-accent-400 text-xs font-semibold">Mención Honorífica Cum Laude</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: IUJO -->
+                        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all">
+                            <div>
+                                <div class="flex items-center justify-between gap-4 mb-4">
+                                    <div class="w-12 h-12 rounded-xl bg-white p-1.5 flex items-center justify-center border border-slate-800 shadow-md shrink-0">
+                                        <img src="assets/img/educacion/logo_iujo.jpg" alt="IUJO" class="w-full h-full object-contain rounded-lg">
+                                    </div>
+                                    <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-600/20 text-accent-400 w-fit">2005 - 2008</span>
+                                </div>
+                                <h4 class="text-lg font-bold text-white mt-1">Técnico Superior en Informática</h4>
+                                <p class="text-slate-400 text-sm mt-1">Instituto Universitario Jesús Obrero (IUJO)</p>
+                            </div>
+                            <div class="mt-4">
+                                <span class="inline-block px-3 py-1 rounded-md bg-accent-400/10 text-accent-400 text-xs font-semibold">Mención Honorífica Cum Laude</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Cursos y Certificaciones -->
-                <div class="space-y-6">
-                    <h3 class="text-xl font-bold text-accent-400 flex items-center gap-2">
+                <!-- FILA 2: Cursos & Certificados (2 tarjetas lado a lado) -->
+                <div>
+                    <h3 class="text-xl font-bold text-accent-400 flex items-center gap-2 mb-6">
                         <i data-lucide="award" class="w-6 h-6"></i> Cursos & Certificados
                     </h3>
 
-                    <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Platzi & Código Facilito</h4>
-                            <p class="text-slate-400 text-xs mt-1">Curso de PHP con Laravel, JavaScript Básico/Práctico, EcmaScript 6+, Desarrollo Web Profesional y Angular.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Card 3: Platzi & Código Facilito -->
+                        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all">
+                            <div>
+                                <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-600/20 text-accent-400 w-fit inline-block mb-4">Actualización Continua</span>
+                                <h4 class="text-lg font-bold text-white mt-1">Platzi & Código Facilito</h4>
+                                <p class="text-slate-400 text-sm mt-1">Curso de PHP con Laravel, JavaScript Básico/Práctico, EcmaScript 6+, Desarrollo Web Profesional y Angular.</p>
+                            </div>
+                            <div class="mt-4">
+                                <span class="inline-block px-3 py-1 rounded-md bg-brand-600/20 text-accent-400 text-xs font-semibold">Desarrollo Web & Backend</span>
+                            </div>
                         </div>
-                        <hr class="border-slate-800">
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Open English</h4>
-                            <p class="text-slate-400 text-xs mt-1">Certificados de Nivel 1, 2 y 3 (Dominio profesional para entornos internacionales).</p>
+
+                        <!-- Card 4: Open English -->
+                        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all">
+                            <div>
+                                <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-600/20 text-accent-400 w-fit inline-block mb-4">Idiomas / Competencias</span>
+                                <h4 class="text-lg font-bold text-white mt-1">Open English</h4>
+                                <p class="text-slate-400 text-sm mt-1">Certificados de Nivel 1, 2 y 3 (Dominio profesional para entornos internacionales y comunicación global).</p>
+                            </div>
+                            <div class="mt-4">
+                                <span class="inline-block px-3 py-1 rounded-md bg-brand-600/20 text-accent-400 text-xs font-semibold">Inglés Profesional</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -805,47 +843,125 @@
     </section>
 
     <!-- REFERENCIAS / TESTIMONIOS -->
-    <section id="testimonios" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- REFERENCIAS / TESTIMONIOS (Slider de uno a la vez) -->
+    <section id="testimonios" class="py-20 bg-slate-900/30 border-t border-slate-800/60">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-accent-400 text-sm font-bold tracking-wider uppercase">Recomendaciones</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Referencias Profesionales</h2>
                 <p class="text-slate-400 mt-4">Aval de colegas y profesionales que han trabajado directamente conmigo en proyectos de desarrollo.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Testimonio 1 -->
-                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
-                    <p class="text-slate-300 italic text-sm leading-relaxed mb-6">
-                        "Gianni es un desarrollador senior excepcional. Su dominio técnico en backend y su capacidad analítica para resolver problemas complejos bajo metodologías ágiles garantizan resultados de máxima calidad."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-brand-600 flex items-center justify-center text-white font-bold text-lg">
-                            JP
+            <!-- Contenedor del Slider -->
+            <div class="relative">
+                <!-- Tarjetas de Testimonios -->
+                <div id="testimonial-slider" class="overflow-hidden">
+                    
+                    <!-- Testimonio 1: Albert Torres Parra -->
+                    <div class="testimonial-card transition-all duration-500 opacity-100 flex flex-col items-center text-center p-8 sm:p-10 rounded-3xl bg-slate-900 border border-slate-800 shadow-xl" data-index="0">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-brand-600 to-accent-400 p-1 mb-6 shadow-lg">
+                            <div class="w-full h-full rounded-full bg-slate-950 flex items-center justify-center text-white font-extrabold text-xl">
+                                AP
+                            </div>
                         </div>
+                        <p class="text-slate-300 italic text-base sm:text-lg leading-relaxed max-w-2xl mb-8">
+                            "Profesional bastante capacitado y con mucha experiencia en el área de informática, arquitectura y desarrollo de software. Excelente habilidades de liderazgo y planificación de proyectos. Uno de los mejores profesionales con el que he trabajado."
+                        </p>
                         <div>
-                            <h3 class="font-bold text-white">José Parisi</h3>
-                            <p class="text-accent-400 text-xs">Senior Full Stack Dev (España)</p>
-                            <p class="text-slate-500 text-xs mt-0.5">Tel: +34 651405480</p>
+                            <h3 class="font-bold text-white text-lg">Albert Torres Parra</h3>
+                            <p class="text-accent-400 text-xs font-semibold mt-1">Information Technology Consultant at Graca Consultores C.A.</p>
+                            <p class="text-slate-500 text-xs mt-1">14 de julio de 2025 • Trabajó con Gianni en distintas empresas</p>
                         </div>
                     </div>
+
+                    <!-- Testimonio 2: Keruen Quintairos -->
+                    <div class="testimonial-card transition-all duration-500 opacity-0 hidden flex flex-col items-center text-center p-8 sm:p-10 rounded-3xl bg-slate-900 border border-slate-800 shadow-xl" data-index="1">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-brand-600 to-accent-400 p-1 mb-6 shadow-lg">
+                            <div class="w-full h-full rounded-full bg-slate-950 flex items-center justify-center text-white font-extrabold text-xl">
+                                KQ
+                            </div>
+                        </div>
+                        <p class="text-slate-300 italic text-base sm:text-lg leading-relaxed max-w-2xl mb-8">
+                            "Tuve la oportunidad de supervisar a Gianni en AG2, donde su trabajo como Desarrollador de Software fue notable. Demostró una sólida capacidad analítica y una comprensión profunda de la lógica de programación... Es un profesional confiable y un colaborador valioso."
+                        </p>
+                        <div>
+                            <h3 class="font-bold text-white text-lg">Keruen Quintairos</h3>
+                            <p class="text-accent-400 text-xs font-semibold mt-1">Ingeniero en Informática | Desarrollador Front-end</p>
+                            <p class="text-slate-500 text-xs mt-1">13 de abril de 2024 • Supervisaba directamente a Gianni</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonio 3: Simón Blanco -->
+                    <div class="testimonial-card transition-all duration-500 opacity-0 hidden flex flex-col items-center text-center p-8 sm:p-10 rounded-3xl bg-slate-900 border border-slate-800 shadow-xl" data-index="2">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-brand-600 to-accent-400 p-1 mb-6 shadow-lg">
+                            <div class="w-full h-full rounded-full bg-slate-950 flex items-center justify-center text-white font-extrabold text-xl">
+                                SB
+                            </div>
+                        </div>
+                        <p class="text-slate-300 italic text-base sm:text-lg leading-relaxed max-w-2xl mb-8">
+                            "He tenido la oportunidad de trabajar junto a Gianni y es un excelente profesional. Conoce muy bien las metodologías a implementar y sus acciones están alineadas a las mejores prácticas dependiendo del proyecto en el cual esté asignado."
+                        </p>
+                        <div>
+                            <h3 class="font-bold text-white text-lg">Simón Blanco</h3>
+                            <p class="text-accent-400 text-xs font-semibold mt-1">Responsable de Infraestructura TI</p>
+                            <p class="text-slate-500 text-xs mt-1">15 de octubre de 2021 • Estudió con Gianni</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonio 4: Jorge Bastidas -->
+                    <div class="testimonial-card transition-all duration-500 opacity-0 hidden flex flex-col items-center text-center p-8 sm:p-10 rounded-3xl bg-slate-900 border border-slate-800 shadow-xl" data-index="3">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-brand-600 to-accent-400 p-1 mb-6 shadow-lg">
+                            <div class="w-full h-full rounded-full bg-slate-950 flex items-center justify-center text-white font-extrabold text-xl">
+                                JB
+                            </div>
+                        </div>
+                        <p class="text-slate-300 italic text-base sm:text-lg leading-relaxed max-w-2xl mb-8">
+                            "Gianni es un compañero muy servicial y con un gran talento. Tuve la oportunidad de trabajar con él y es una persona muy proactiva que siempre está dispuesta a ayudar y/o a buscar la solución para cualquier tema. Lo recomiendo totalmente. ¡Gran aporte!"
+                        </p>
+                        <div>
+                            <h3 class="font-bold text-white text-lg">Jorge Bastidas</h3>
+                            <p class="text-accent-400 text-xs font-semibold mt-1">Desarrollador SW</p>
+                            <p class="text-slate-500 text-xs mt-1">12 de octubre de 2021 • Supervisaba directamente a Gianni</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonio 5: Pablo Ramirez Amador -->
+                    <div class="testimonial-card transition-all duration-500 opacity-0 hidden flex flex-col items-center text-center p-8 sm:p-10 rounded-3xl bg-slate-900 border border-slate-800 shadow-xl" data-index="4">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-brand-600 to-accent-400 p-1 mb-6 shadow-lg">
+                            <div class="w-full h-full rounded-full bg-slate-950 flex items-center justify-center text-white font-extrabold text-xl">
+                                PR
+                            </div>
+                        </div>
+                        <p class="text-slate-300 italic text-base sm:text-lg leading-relaxed max-w-2xl mb-8">
+                            "El Ingeniero Gianni es un profesional íntegro orientado al éxito, con enfoque técnico y capacidad de trabajar en equipo."
+                        </p>
+                        <div>
+                            <h3 class="font-bold text-white text-lg">Pablo Ramirez Amador</h3>
+                            <p class="text-accent-400 text-xs font-semibold mt-1">Data Architect / Data Engineer / Azure Database Engineer, PhD in Informatics</p>
+                            <p class="text-slate-500 text-xs mt-1">8 de enero de 2018 • Estudió con Gianni</p>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Testimonio 2 -->
-                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
-                    <p class="text-slate-300 italic text-sm leading-relaxed mb-6">
-                        "Trabajar con Gianni es sinónimo de orden, profesionalismo y código limpio. Su experiencia con Laravel y arquitecturas de bases de datos destaca notablemente en cada entrega."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-accent-500 flex items-center justify-center text-slate-950 font-bold text-lg">
-                            NM
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-white">Nelly Moreno</h3>
-                            <p class="text-accent-400 text-xs">Backend Dev (Venezuela)</p>
-                            <p class="text-slate-500 text-xs mt-0.5">Tel: +58 412 8248865</p>
-                        </div>
+                <!-- Controles de Navegación del Slider -->
+                <div class="flex items-center justify-center gap-4 mt-8">
+                    <button id="prev-testimonial" class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-accent-400 hover:border-accent-400/50 transition-all shadow-md" aria-label="Anterior testimonio">
+                        <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                    </button>
+                    
+                    <div id="testimonial-dots" class="flex items-center gap-2">
+                        <!-- Generado dinámicamente o por puntos estáticos -->
+                        <span class="w-2.5 h-2.5 rounded-full bg-accent-400 transition-all cursor-pointer" data-index="0"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-slate-700 transition-all cursor-pointer" data-index="1"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-slate-700 transition-all cursor-pointer" data-index="2"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-slate-700 transition-all cursor-pointer" data-index="3"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-slate-700 transition-all cursor-pointer" data-index="4"></span>
                     </div>
+
+                    <button id="next-testimonial" class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-accent-400 hover:border-accent-400/50 transition-all shadow-md" aria-label="Siguiente testimonio">
+                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </button>
                 </div>
             </div>
         </div>

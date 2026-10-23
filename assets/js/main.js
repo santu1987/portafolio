@@ -114,6 +114,74 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 1000);
         });
     }
+    // 6. Slider de Testimonios / Recomendaciones Profesionales
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    const prevBtn = document.getElementById('prev-testimonial');
+    const nextBtn = document.getElementById('next-testimonial');
+    const dots = document.querySelectorAll('#testimonial-dots span');
+    
+    let currentIndex = 0;
+    const totalTestimonials = testimonialCards.length;
+
+    function showTestimonial(index) {
+        if (totalTestimonials === 0) return;
+
+        // Ocultar todas las tarjetas
+        testimonialCards.forEach((card) => {
+            card.classList.add('hidden', 'opacity-0');
+            card.classList.remove('opacity-100');
+        });
+
+        // Asegurar límites del índice
+        if (index >= totalTestimonials) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = totalTestimonials - 1;
+        } else {
+            currentIndex = index;
+        }
+
+        // Mostrar la tarjeta actual seleccionada
+        const activeCard = testimonialCards[currentIndex];
+        if (activeCard) {
+            activeCard.classList.remove('hidden');
+            setTimeout(() => {
+                activeCard.classList.add('opacity-100');
+            }, 10);
+        }
+
+        // Actualizar estado visual de los puntos indicadores (dots)
+        dots.forEach((dot, idx) => {
+            if (idx === currentIndex) {
+                dot.classList.remove('bg-slate-700');
+                dot.classList.add('bg-accent-400', 'w-6'); // Alarga un poco el indicador activo
+            } else {
+                dot.classList.remove('bg-accent-400', 'w-6');
+                dot.classList.add('bg-slate-700', 'w-2.5');
+            }
+        });
+    }
+
+    if (prevBtn && nextBtn && totalTestimonials > 0) {
+        prevBtn.addEventListener('click', () => {
+            showTestimonial(currentIndex - 1);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            showTestimonial(currentIndex + 1);
+        });
+
+        // Permitir clic en los puntos indicadores
+        dots.forEach((dot) => {
+            dot.addEventListener('click', (e) => {
+                const targetIndex = parseInt(e.target.getAttribute('data-index'));
+                showTestimonial(targetIndex);
+            });
+        });
+
+        // Inicializar mostrando el primero
+        showTestimonial(0);
+    }
     /** */
     
 });
